@@ -112,8 +112,15 @@ ul{
     column-gap: 30px;
 }
 
-.how .list{
-    column-gap: 60px;
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 12px;
 }
 
 .contact{

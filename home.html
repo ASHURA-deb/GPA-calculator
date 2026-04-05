@@ -22,7 +22,7 @@
         <button class="btn"><a href="/Calculator/index.html">Enter the Calculator</a></button>
     </div>
 
-    <div class="about">
+    <div class="about scroll-fade-in">
         <h2>About</h2>
         <p>
             This GPA Calculator was built to make academic tracking simple and stress free.
@@ -31,9 +31,9 @@
         <p>No sign-up. No ads. Just your results.</p>
     </div>
 
-    <div class="how">
+    <div class="how scroll-fade-in">
         <h2>How it Works</h2>
-        <ol class="list">
+        <ol class="list scroll-stagger">
             <li class="how-list">Enter your course name, grade, and credit units for each subject.</li>
             <li class="how-list">Add as many courses as you need using the "Add Course" button</li>
             <li class="how-list">Hit "Calculate GPA" and your result shows up instantly</li>
@@ -41,24 +41,45 @@
         </ol>
     </div>
 
-    <div class="contact">
+    <div class="contact scroll-fade-in">
         <h2>Contact Us</h2>
         <p>Got feedback or found a bug? We'd love to hear from you.</p>
         <ul>
-            <li>Email: <a href="mailto:someemail.com">Gpacalculator@email.com</a></li>
-            <li>Instagram: <a href="#">@Calculator</a></li>
+            <li class="how-list">Email: <a href="mailto:someemail.com">Gpacalculator@email.com</a></li>
+            <li class="how-list">Instagram: <a href="#">@Calculator</a></li>
         </ul>
     </div>
 
     <footer>
         <p>&copy; 2025 GPA Calculator, All rights reserved.</p>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">How it works</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li class="how-list"><a href="#">Home</a></li>
+            <li class="how-list"><a href="#">About</a></li>
+            <li class="how-list"><a href="#">How it works</a></li>
+            <li class="how-list"><a href="#">Contacts</a></li>
         </ul>
     </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.scroll-fade-in, .scroll-fade-in-left, .scroll-fade-in-right, .scroll-stagger').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>

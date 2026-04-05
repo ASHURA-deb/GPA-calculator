@@ -7,18 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <!-- <div class="navbar"> -->
-        <!-- <nav class="nav"> -->
-            <!-- <ul class="nav-list"> -->
-                <!-- <li class="nav-links">Home</li> -->
-                <!-- <li class="nav-links">About</li> -->
-                <!-- <li class="nav-links">Contact us</li> -->
-            <!-- </ul> -->
-        <!-- </nav> -->
-    <!-- </div> -->
-<Button class="btn"><a href="/home.html">Home</a></Button>
-
-  <h1>GPA Calculator</h1>
+  <Button class="btn"><a href="/home.html">Home</a></Button>
+  
+  <div class="container">
+    <h1>GPA Calculator</h1>
 
   <!-- INPUT TABLE -->
   <table id="course-table">
@@ -31,11 +23,10 @@
       </tr>
     </thead>
     <tbody id="table-body">
-      <!-- Rows injected by JS -->
+      
     </tbody>
   </table>
 
-  <!-- ACTIONS -->
   <div id="actions">
     <button onclick="addRow()">+ Add Course</button>
     <button onclick="calculate()">Calculate GPA</button>
@@ -45,7 +36,7 @@
 
   <p id="error-msg"></p>
 
-  <!-- RESULTS SECTION -->
+ 
   <div id="result-section">
     <h2>Results</h2>
     <p>GPA: <strong id="gpa-value"></strong></p>
@@ -69,6 +60,7 @@
       </tfoot>
     </table>
   </div>
+</div>
 
 <script src="script.js"></script>
 
